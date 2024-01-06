@@ -1,0 +1,24 @@
+fn heapify(arr, n, i) {
+    // 使用 `from` 迭代器，生成顺序的元素。
+    let [left, right] = from 2 * i + 1;
+    // 数组能够打上标签。函数能访问数组的标签。
+    let largest, largest_name = Math.max [`left`: arr?[left], `right`: arr?[right], `i`: arr[i]]
+
+    match largest_name
+      ? "left" || "right": {
+        Array.swap arr, i, largest
+        heapify arr, n, largest
+      }
+}
+
+fn heapSort(arr) {
+    let n = arr.size
+
+   for range(n #/ 2 - 1, -1, -1):
+        heapify arr, n, it
+
+   for range(n - 1, 0, -1):
+        Array.swap 0 i
+        heapify arr, it, 0
+   arr
+}
